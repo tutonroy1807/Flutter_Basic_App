@@ -56,6 +56,14 @@ class HomePage extends StatelessWidget {
         ],
           ),
       //body: Text("MY APP"),
+      floatingActionButton: FloatingActionButton(
+        elevation: 20,
+        backgroundColor: Colors.red,
+        child: Icon(Icons.add),
+        onPressed:(){
+          MySnackBar("please add something", context);
+        },
+      ),
     );
   }
 }
