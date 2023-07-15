@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -26,9 +28,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
-        "Driver Haiyer",
-      )),
+        title: Text("Driver Haiyer-->"),
+        // titlespacing : 20 or we are want
+        centerTitle: true,
+        toolbarHeight: 70,
+        toolbarOpacity: 1,
+      //  elevation: 10,
+        backgroundColor: Colors.deepPurpleAccent,
+          ),
       body: Text("MY APP"),
     );
   }
