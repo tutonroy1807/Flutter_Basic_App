@@ -29,14 +29,19 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Driver Haiyer-->"),
-        // titlespacing : 20 or we are want
-        centerTitle: true,
-        toolbarHeight: 70,
-        toolbarOpacity: 1,
+       titleSpacing: 30,
+       toolbarHeight: 70,
       //  elevation: 10,
-        backgroundColor: Colors.deepPurpleAccent,
+        backgroundColor: Colors.amber,
+        // works with action button and add a different type of action in appbar
+        actions: [
+          IconButton(onPressed: (){}, icon: Icon(Icons.settings)),
+          IconButton(onPressed: (){}, icon: Icon(Icons.add_alert_outlined)),
+          IconButton(onPressed: (){}, icon: Icon(Icons.add_call)),
+          IconButton(onPressed: (){}, icon: Icon((Icons.message))),
+        ],
           ),
-      body: Text("MY APP"),
+      //body: Text("MY APP"),
     );
   }
 }
