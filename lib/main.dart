@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   MySnackBar(message, context){
-   return ScaffoldMessenger.of(context).showSnackBar(
+    return ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(message)),
     );
   }
@@ -35,9 +35,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Driver Haiyer-->"),
-       titleSpacing: 30,
-       toolbarHeight: 70,
-      //  elevation: 10,
+        titleSpacing: 30,
+        toolbarHeight: 70,
+        //  elevation: 10,
         backgroundColor: Colors.amber,
         // works with action button and add a different type of action in appbar
         actions: [
@@ -54,7 +54,7 @@ class HomePage extends StatelessWidget {
             MySnackBar("Your message is coming", context);
           }, icon: Icon((Icons.message))),
         ],
-          ),
+      ),
       //body: Text("MY APP"),
       floatingActionButton: FloatingActionButton(
         elevation: 20,
@@ -75,17 +75,29 @@ class HomePage extends StatelessWidget {
         onTap: (int index){
           if(index==0){
             MySnackBar("Its a HomeButton", context);
-         }
+          }
           if(index == 1){
             MySnackBar("All message comes here", context);
-        }
+          }
           if(index == 2)
-            {
-              MySnackBar("Its Your Profile", context);
-            }
-      },
+          {
+            MySnackBar("Its Your Profile", context);
+          }
+        },
 
 
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(child: Text("Prosenjit Roy")),
+            ListTile(title: Text("Home"),),
+            ListTile(title: Text("Setting"),),
+            ListTile(title: Text("Login"),),
+            ListTile(title: Text("Profile"),),
+            ListTile(title: Text("Contract"),),
+          ],
+        ),
       ),
     );
   }
