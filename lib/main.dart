@@ -64,6 +64,29 @@ class HomePage extends StatelessWidget {
           MySnackBar("please add something", context);
         },
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex : 2,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "HOME"),
+          BottomNavigationBarItem(icon: Icon(Icons.messenger_outline), label: "MESSAGE"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "PROFILE"),
+        ],
+
+        onTap: (int index){
+          if(index==0){
+            MySnackBar("Its a HomeButton", context);
+         }
+          if(index == 1){
+            MySnackBar("All message comes here", context);
+        }
+          if(index == 2)
+            {
+              MySnackBar("Its Your Profile", context);
+            }
+      },
+
+
+      ),
     );
   }
 }
