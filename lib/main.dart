@@ -1,4 +1,4 @@
-import 'dart:html';
+
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +24,12 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  MySnackBar(message, context){
+   return ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message)),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,10 +41,18 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.amber,
         // works with action button and add a different type of action in appbar
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.settings)),
-          IconButton(onPressed: (){}, icon: Icon(Icons.add_alert_outlined)),
-          IconButton(onPressed: (){}, icon: Icon(Icons.add_call)),
-          IconButton(onPressed: (){}, icon: Icon((Icons.message))),
+          IconButton(onPressed: (){
+            MySnackBar("Please click me and change your setting to your app", context);
+          }, icon: Icon(Icons.settings)),
+          IconButton(onPressed: (){
+            MySnackBar("Your Important notification is here", context);
+          }, icon: Icon(Icons.add_alert_outlined)),
+          IconButton(onPressed: (){
+            MySnackBar("Add your call", context);
+          }, icon: Icon(Icons.add_call)),
+          IconButton(onPressed: (){
+            MySnackBar("Your message is coming", context);
+          }, icon: Icon((Icons.message))),
         ],
           ),
       //body: Text("MY APP"),
