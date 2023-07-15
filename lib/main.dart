@@ -1,5 +1,6 @@
 
 
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -88,17 +89,54 @@ class HomePage extends StatelessWidget {
 
       ),
       drawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(child: Text("Prosenjit Roy")),
-            ListTile(title: Text("Home"),),
-            ListTile(title: Text("Setting"),),
-            ListTile(title: Text("Login"),),
-            ListTile(title: Text("Profile"),),
-            ListTile(title: Text("Contract"),),
-          ],
-        ),
-      ),
+          child: ListView(
+              children: [
+                DrawerHeader(child: Text("Prosenjit Roy")),
+                ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                    onTap: () {
+                      MySnackBar("Its a homebutton", context);
+                    }),
+                ListTile(
+                  leading: Icon(Icons.settings),
+                  title: Text("Setting"),
+                  onTap: () {
+                    MySnackBar("Setting button", context);
+                  },
+                ),
+                ListTile(
+                  leading: Icon(Icons.search),
+                  title: Text("Search"),
+                  onTap: () {
+                    MySnackBar("Search anything and find them", context);
+                  },
+                ),
+                ListTile(
+                  leading: Icon(Icons.login),
+                  title: Text("Login"),
+                  onTap: () {
+                    MySnackBar(
+                        "Click a login a button and enter your account", context);
+                  },
+                ),
+                ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Profile"),
+                  onTap: () {
+                    MySnackBar("Its Your Profile", context);
+                  },
+                ),
+                ListTile(
+                  leading: Icon(Icons.contact_page_rounded),
+                  title: Text("Contract"),
+                  onTap: () {
+                    MySnackBar("Contract List", context);
+                  },
+                ),
+              ],
+              ),
+          ),
     );
   }
 }
