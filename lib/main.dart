@@ -63,7 +63,44 @@ class HomePage extends StatelessWidget {
               icon: Icon((Icons.message))),
         ],
       ),
-      //body: Text("MY APP"),
+
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+
+            Image.network("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1283&q=80",
+            height: 300,
+            width: 400,
+            fit: BoxFit.scaleDown,),
+
+            ElevatedButton(onPressed: (){
+
+            }, child: Icon(Icons.login, color: Colors.tealAccent,)),
+
+
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              color: Colors.amberAccent,
+
+              child: Text("Driver Haiyer", style: TextStyle(color: Colors.black),),
+            )
+
+          ],
+        ),
+      ),
+
+
+
+
+
+
+
+
+
+
       floatingActionButton: FloatingActionButton(
         elevation: 20,
         backgroundColor: Colors.red,
